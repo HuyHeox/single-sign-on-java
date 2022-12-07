@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+
+  <threadsafe>true</threadsafe>
+  <sessions-enabled>true</sessions-enabled>
+  <runtime>java8</runtime>
+
+  <system-properties>
+    <property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
+    
+    <!-- Google config -->
+    <property name="spring.security.oauth2.client.registration.google.client-id" value="1067279544458-arn10hti8n4ivojd397gtdjrbps6diio.apps.googleusercontent.com"/>
+    <property name="spring.security.oauth2.client.registration.google.client-secret" value="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"/>
+    <property name="spring.security.oauth2.client.registration.google.redirect-uri" value="{baseUrl}/oauth2/callback/{registrationId}"/>
+    <property name="spring.security.oauth2.client.registration.google.scope" value="email ,profile"/> 
+    
+    <!-- Azure config -->
+    <property name="spring.security.oauth2.client.registration.azure.client-id " value="325431d7-870f-41f1-bd72-69f0a4d52574"/>
+    <property name="spring.security.oauth2.client.registration.azure.client-secret" value="Z738Q~GPFnyeufMS3AklQ4xBBV90co~YPvQVLdcK"/>
+    <!-- <property name="spring.security.oauth2.client.registration.azure.redirect-uri" value="{baseUrl}/office365api"/> -->
+    <property name="spring.security.oauth2.client.registration.azure.redirect-uri" value="{baseUrl}/oauth2/callback/{registrationId}"/>  
+	<property name="spring.security.oauth2.client.registration.azure.authorization-grant-type" value="authorization_code"/>
+    <property name="spring.security.oauth2.client.registration.azure.scope" value="openid,profile"/>
+    <property name="spring.security.oauth2.client.provider.azure.jwk-set-uri" value="https://login.microsoftonline.com/1f3df81d-eae2-4455-b67d-8709bd40a1f7/discovery/v2.0/keys"/>
+    
+    <property name="spring.security.oauth2.client.provider.azure.authorization-uri" value="https://login.microsoftonline.com/1f3df81d-eae2-4455-b67d-8709bd40a1f7/oauth2/v2.0/authorize"/>
+    <property name="spring.security.oauth2.client.provider.azure.token-uri" value="https://login.microsoftonline.com/1f3df81d-eae2-4455-b67d-8709bd40a1f7/oauth2/v2.0/token"/>
+  </system-properties>
+
+</appengine-web-app>
